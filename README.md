@@ -2,7 +2,6 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![LightGBM](https://img.shields.io/badge/LightGBM-4.1.0-green.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Kaggle](https://img.shields.io/badge/Kaggle-Competition-20BEFF.svg)
 
 A machine learning solution for detecting fraudulent online transactions using the IEEE-CIS Fraud Detection dataset from Kaggle.
@@ -44,75 +43,6 @@ The dataset consists of two main tables:
 - Transaction features: TransactionAmt, ProductCD, card1-6, addr1-2
 - Identity features: DeviceType, DeviceInfo, id_01-38
 - Anonymized features: V1-339, C1-14, D1-15, M1-9
-
-## 🛠️ Installation
-
-### Prerequisites
-- Python 3.8 or higher
-- pip package manager
-- Jupyter Notebook
-
-### Setup
-
-1. Clone the repository:
-```bash
-git clone https://github.com/htaheri17/ieee-fraud-detection.git
-cd ieee-fraud-detection
-```
-
-2. Create a virtual environment (optional but recommended):
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-4. Download the data:
-   - Go to [Kaggle Competition Data Page](https://www.kaggle.com/competitions/ieee-fraud-detection/data)
-   - Download all CSV files
-   - Place them in the `data/` folder
-
-## 🚀 Usage
-
-### Running the Analysis
-
-1. Start Jupyter Notebook:
-```bash
-jupyter notebook
-```
-
-2. Open `notebook/01_EDA_and_baseline.ipynb`
-
-3. Run all cells to:
-   - Load and explore the data
-   - Perform exploratory data analysis
-   - Engineer features
-   - Train the baseline LightGBM model
-   - Generate predictions and submission file
-
-### Project Structure
-
-```
-ieee-fraud-detection/
-├── data/                          # Raw data files (not tracked in git)
-│   ├── train_transaction.csv
-│   ├── train_identity.csv
-│   ├── test_transaction.csv
-│   └── test_identity.csv
-├── notebook/                      # Jupyter notebooks
-│   └── 01_EDA_and_baseline.ipynb # Main analysis notebook
-├── submission/                    # Model predictions
-│   └── submission.csv
-├── images/                        # Screenshots and visualizations
-├── requirements.txt              # Python dependencies
-├── .gitignore                    # Git ignore rules
-├── LICENSE                       # MIT License
-└── README.md                     # This file
-```
 
 ## 📈 Methodology
 
@@ -175,12 +105,10 @@ params = {
 
 ### 4. Model Performance
 
-| Metric | Score |
-|--------|-------|
-| Training AUC | 0.9846 |
-| Validation AUC | 0.9538 |
-| Public Test AUC | 0.9303 |
-| Private Test AUC | 0.8991 |
+Training AUC | 0.9846
+Validation AUC | 0.9538
+Public Test AUC | 0.9303
+Private Test AUC | 0.8991
 
 **Performance Analysis:**
 - Strong validation score indicates good learning
@@ -195,80 +123,11 @@ params = {
 4. **Temporal Patterns:** Transaction timing features contribute to fraud detection
 5. **Feature Importance:** A combination of transaction details, card information, and V-columns are most predictive
 
-## 🔮 Future Improvements
-
-### Short-term Enhancements
-- [ ] Implement K-Fold Cross-Validation (5-fold) for more robust evaluation
-- [ ] Handle class imbalance with focal loss or class weights
-- [ ] Hyperparameter tuning using Optuna or Bayesian optimization
-- [ ] Feature selection to remove low-importance features
-
-### Advanced Feature Engineering
-- [ ] Aggregation features: group statistics by card, address, email domain
-- [ ] Create unique client ID from card1 + addr1 + D1 combination
-- [ ] Velocity features: transaction frequency per card/email
-- [ ] Time-based features: day of week, time since last transaction
-- [ ] Target encoding for high-cardinality categorical features
-
-### Model Improvements
-- [ ] Ensemble multiple models (LightGBM + XGBoost + CatBoost)
-- [ ] Stack models with meta-learner
-- [ ] Try neural network architectures (TabNet, AutoInt)
-- [ ] Implement pseudo-labeling for semi-supervised learning
-
-### Analysis & Deployment
-- [ ] Error analysis: identify systematic prediction failures
-- [ ] SHAP values for model interpretability
-- [ ] Create production-ready pipeline
-- [ ] Build API for real-time fraud scoring
-
-## 🛡️ Model Interpretability
-
-Understanding model predictions is crucial for:
-- Debugging and improving the model
-- Building trust with stakeholders
-- Ensuring regulatory compliance
-- Detecting potential biases
-
-Future work will include SHAP (SHapley Additive exPlanations) analysis to explain individual predictions.
-
-## 📚 Learning Resources
-
-**Recommended Reading:**
-- [LightGBM Documentation](https://lightgbm.readthedocs.io/)
-- [Imbalanced Learning Techniques](https://imbalanced-learn.org/)
-- [Feature Engineering for Machine Learning](https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/)
-
-**Relevant Papers:**
-- "LightGBM: A Highly Efficient Gradient Boosting Decision Tree" (Ke et al., 2017)
-- "XGBoost: A Scalable Tree Boosting System" (Chen & Guestrin, 2016)
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Kaggle](https://www.kaggle.com/) for hosting the competition
-- [Vesta Corporation](https://www.vesta.io/) for providing the dataset
-- IEEE Computational Intelligence Society for organizing the competition
-- The Kaggle community for valuable discussions and insights
-
 ## 👤 Author
 
 **Your Name**
 - GitHub: [@htaheri17](https://github.com/htaheri17)
 - Kaggle: [htaheri17](https://kaggle.com/htaheri17)
 - Email: hussain.taheri@ufl.edu
-
-## 📧 Contact
-
-Have questions or suggestions? Feel free to:
-- Open an issue on this repository
-- Reach out via email
-
----
-
-⭐ **If you found this project helpful, please consider giving it a star!** ⭐
 
 *Last Updated: January 2026*
